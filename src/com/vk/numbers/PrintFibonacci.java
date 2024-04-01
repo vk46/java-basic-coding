@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PrintFibonacci {
 
-	public static void printFibonac(int number) {
+	public static void printFibonacci(int number) {
 		if (number<0) {
 			System.out.println("Please provide correct number");
 		}
@@ -23,7 +23,7 @@ public class PrintFibonacci {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
-		printFibonac(num);
+		printFibonacci(num);
 		sc.close();
 	}
 
