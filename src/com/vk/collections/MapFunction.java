@@ -3,7 +3,6 @@ package com.vk.collections;
 import com.vk.model.Employer;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -11,7 +10,6 @@ import java.util.stream.Collectors;
 public class MapFunction {
     public static void main(String[] args) {
         List<Employer> employeeList = getEmployers();
-        HashMap<Employer, String> map = new HashMap<>();
 
         Map<String, List<Employer>> groupedEmployees = employeeList.stream()
                 .filter(employer -> employer.getCountry().equals("India"))
