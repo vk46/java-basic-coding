@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Practice {
     public static void findDuplicates(int[] array) {
-        if (array.length <= 0) {
+        if (array.length == 0) {
             System.out.println("Invalid input");
         }
 
@@ -16,7 +16,9 @@ public class Practice {
                 duplicateSet.add(num);
             }
         }
-
+        System.out.println("Unique elements: ");
+        set.forEach(System.out::println);
+        System.out.println("Duplicates elements: ");
         duplicateSet.forEach(System.out::println);
     }
 
