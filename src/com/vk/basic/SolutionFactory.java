@@ -3,7 +3,7 @@ package com.vk.basic;
 import java.util.*;
 
 interface Food {
-    public String getType();
+    String getType();
 }
 
 class Pizza implements Food {
@@ -32,7 +32,7 @@ class FoodFactory {
 
 public class SolutionFactory {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
             // creating the factory

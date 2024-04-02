@@ -1,12 +1,10 @@
 package com.vk.collections;
 
+import com.vk.model.Student;
+
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
-
-import com.vk.model.Student;
 
 //Complete the code
 public class SortAndComparator
@@ -15,7 +13,7 @@ public class SortAndComparator
 		Scanner in = new Scanner(System.in);
 		int testCases = Integer.parseInt(in.nextLine());
 
-		List<Student> studentList = new ArrayList<Student>();
+		List<Student> studentList = new ArrayList<>();
 		while(testCases>0){
 			int id = in.nextInt();
 			String fname = in.next();
@@ -27,20 +25,17 @@ public class SortAndComparator
 			testCases--;
 		}
 
-		Collections.sort(studentList, new Comparator<Student>() {
-			@Override
-			public int compare(Student s1, Student s2) {
-				if(s2.getCgpa()>s1.getCgpa()){
-					return 1;
-				}else if(s2.getCgpa()<s1.getCgpa()){
-					return -1;
-				}
-				return s1.getFname().compareTo(s2.getFname());
-			}
-		});
+		studentList.sort((s1, s2) -> {
+            if (s2.cgpa() > s1.cgpa()) {
+                return 1;
+            } else if (s2.cgpa() < s1.cgpa()) {
+                return -1;
+            }
+            return s1.fname().compareTo(s2.fname());
+        });
 
 		for(Student st: studentList){
-			System.out.println(st.getFname());
+			System.out.println(st.fname());
 		}
 		
 		in.close();

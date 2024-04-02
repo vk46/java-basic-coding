@@ -25,8 +25,8 @@ public class PrintStringOccurrence {
         System.out.println(input);
     }
 
-    public static void characterStreans(String str) {
-        List<Character> list = str.replaceAll("\\s", "").chars().mapToObj(c -> (char) c).collect(Collectors.toList());
+    public static void characterStreams(String str) {
+        List<Character> list = str.replaceAll("\\s", "").chars().mapToObj(c -> (char) c).toList();
         Map<Character, Long> map = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         map.forEach((key, value) -> {
             if (value > 1)
@@ -35,6 +35,7 @@ public class PrintStringOccurrence {
     }
 
     public static void main(String[] args) {
-        characterStreans("Vinay Kumar Palla".toUpperCase());
+        characterOccurrence("Tejaswini Kallu".toUpperCase());
+        characterStreams("Vinay Kumar Palla".toUpperCase());
     }
 }

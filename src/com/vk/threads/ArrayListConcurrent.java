@@ -5,7 +5,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ArrayListConcurrent extends Thread {
 
-    static CopyOnWriteArrayList<String> courses = new CopyOnWriteArrayList<String>();
+    static CopyOnWriteArrayList<String> courses = new CopyOnWriteArrayList<>();
 
     @Override
     public void run() {
@@ -13,7 +13,7 @@ public class ArrayListConcurrent extends Thread {
             Thread.sleep(2000);
             courses.add("Kubernetes");
         } catch (Exception e) {
-            e.printStackTrace();
+            e.fillInStackTrace();
         }
     }
     public static void main(String[] args) {
@@ -29,16 +29,13 @@ public class ArrayListConcurrent extends Thread {
         Iterator<String> iterator = courses.iterator();
         while (iterator.hasNext()) {
             try{
-                Thread.sleep(2000);
                 String course = iterator.next();
                 System.out.println(course);
             }catch(Exception e){
-                e.printStackTrace();
+                e.fillInStackTrace();
             }
         }
-
         System.out.println(courses);
-        
     }
     
 }

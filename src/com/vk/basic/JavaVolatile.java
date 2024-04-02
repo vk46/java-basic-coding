@@ -17,13 +17,9 @@ public class JavaVolatile {
         try {
             VolatileExample example = new VolatileExample();
 
-            Thread thread1 = new Thread(() -> {
-                example.increment();
-            });
+            Thread thread1 = new Thread(example::increment);
 
-            Thread thread2 = new Thread(() -> {
-                System.out.println(example.getCounter());
-            });
+            Thread thread2 = new Thread(() -> System.out.println(example.getCounter()));
 
             thread1.start();
             thread2.start();
@@ -31,7 +27,7 @@ public class JavaVolatile {
             thread1.join();
             thread2.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            e.fillInStackTrace();
         }
     }
 }

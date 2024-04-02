@@ -40,7 +40,9 @@ public class PrintDuplicateWords {
 	}
 
     public static void main(String[] args) {
-//        printDuplicates("Bug black bug bit a big black dog on his big black nose");
+		System.out.println("Using Java HashMap : ");
+        printDuplicates("Bug black bug bit a big black dog on his big black nose");
+		System.out.println("Using Java Stream API : ");
         printDuplicatesOptimize("Bug black bug bit a big black dog on his big black nose");
     }
 

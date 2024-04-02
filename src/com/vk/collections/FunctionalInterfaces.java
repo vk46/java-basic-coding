@@ -18,7 +18,7 @@ public class FunctionalInterfaces {
         System.out.println("************************************");
 
         // Consumer example
-        Consumer<String> printConsumer = (name) -> System.out.println(name);
+        Consumer<String> printConsumer = System.out::println;
         names.forEach(printConsumer);
         System.out.println("************************************");
 

@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class PrintFibonacciRecursion {
 
-	public static int printFibonacRecursion(int number) {
+	public static int printFibonacciRecursion(int number) {
 		if (number == 0 || number == 1) {
 			return number;
 		} else {
-			return printFibonacRecursion(number - 1) + printFibonacRecursion(number - 2);
+			return printFibonacciRecursion(number - 1) + printFibonacciRecursion(number - 2);
 		}
 	}
 
@@ -16,7 +16,7 @@ public class PrintFibonacciRecursion {
 		Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
 		for (int i = 0; i < num; i++) {
-			System.out.print(printFibonacRecursion(i) + " ");
+			System.out.print(printFibonacciRecursion(i) + " ");
 		}
 		sc.close();
 	}

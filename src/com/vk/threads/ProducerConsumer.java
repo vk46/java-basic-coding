@@ -19,7 +19,7 @@ public class ProducerConsumer {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            e.fillInStackTrace();
                         }
                     }
                     count++;
@@ -39,7 +39,7 @@ public class ProducerConsumer {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            e.fillInStackTrace();
                         }
                     }
                     System.out.println("Consumed: " + count);
