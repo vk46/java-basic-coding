@@ -1,6 +1,9 @@
 package com.vk;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Practice {
     public static void findDuplicates(int[] array) {
@@ -11,11 +14,11 @@ public class Practice {
         HashSet<Integer> set = new HashSet<>();
         HashSet<Integer> duplicateSet = new HashSet<>();
 
-        for (int num : array) {
+        IntStream.of(array).parallel().forEach(num -> {
             if (!set.add(num)) {
                 duplicateSet.add(num);
             }
-        }
+        });
         System.out.println("Unique elements: ");
         set.forEach(System.out::println);
         System.out.println("Duplicates elements: ");
