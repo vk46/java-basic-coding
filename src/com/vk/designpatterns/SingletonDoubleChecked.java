@@ -4,7 +4,12 @@ import java.io.Serializable;
 
 class Singleton implements Serializable, Cloneable {
 
-    private static volatile Singleton instance;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static volatile Singleton instance;
 
     private Singleton() {
     }
