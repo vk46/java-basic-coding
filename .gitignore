@@ -26,4 +26,4 @@ bin/
 .vscode/
 .settings/
 .classpath
-.project
+.idea/

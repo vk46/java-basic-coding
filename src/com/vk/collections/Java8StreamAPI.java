@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Java8StreamAPI {
     public static void main(String[] args) {
-        List<String>languages = new ArrayList <String>();
+        List<String>languages = new ArrayList <>();
         languages.add("English");
         languages.add("German");
         languages.add("French");
@@ -13,15 +13,15 @@ public class Java8StreamAPI {
         languages.add("Hindi");
         languages.add("Telugu");
 
-        languages.stream().forEach(System.out::println);
+        languages.forEach(System.out::println);
         System.out.println("************");
         languages.stream().filter(lang -> lang.startsWith("T")).forEach(System.out::println);
         System.out.println("************");
-        languages.stream().map(lan -> lan.toUpperCase()).forEach(System.out::println);
+        languages.stream().map(String::toUpperCase).forEach(System.out::println);
         System.out.println("************");
         languages.stream().sorted().forEach(System.out::println);
         System.out.println("************");
-        long count = languages.stream().count();
+        long count = languages.size();
         System.out.println("Language Count "+count);
         System.out.println("************");
     }

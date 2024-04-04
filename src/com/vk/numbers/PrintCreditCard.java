@@ -9,9 +9,9 @@ public class PrintCreditCard {
             System.err.println("Invalid credit score!");
             return;
         }
-        if (score >= 400 && score < 600) {
+        if (score < 600) {
             System.out.println("Silver card");
-        } else if (score >= 600 && score < 800) {
+        } else if (score < 800) {
             System.out.println("Gold card");
         } else {
             System.out.println("Platinum card");

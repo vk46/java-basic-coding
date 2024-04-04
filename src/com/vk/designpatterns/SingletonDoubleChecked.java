@@ -1,5 +1,6 @@
 package com.vk.designpatterns;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 class Singleton implements Serializable, Cloneable {
@@ -23,6 +24,7 @@ class Singleton implements Serializable, Cloneable {
         return instance;
     }
 
+    @Serial
     protected Object readResolve() {
         return instance;
     }

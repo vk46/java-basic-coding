@@ -3,7 +3,7 @@ package com.vk.basic;
 class Singleton {
     public static volatile Singleton instance;
 
-    public String str;
+    protected String str;
 
     private Singleton() {
     }

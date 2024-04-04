@@ -14,7 +14,7 @@ public class MethodReference {
 		List<String> nameList = Arrays.asList(names);
 
 		// Print the sorted names
-		nameList.stream().forEach(System.out::println);
+		nameList.forEach(System.out::println);
 
 	}
 

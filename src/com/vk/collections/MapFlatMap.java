@@ -24,14 +24,13 @@ public class MapFlatMap {
 
         // System.out.println(empList);
 
-        List<String> names = empList.stream().map(emp-> emp.getName()).collect(Collectors.toList());
+        List<String> names = empList.stream().map(Employee::getName).collect(Collectors.toList());
         System.out.println(names);
 
-        List<List<String>> cityList = empList.stream().map(emp-> emp.getCities()).collect(Collectors.toList());
+        List<List<String>> cityList = empList.stream().map(Employee::getCities).collect(Collectors.toList());
         System.out.println(cityList);
 
-        List<String> cities = empList.stream().flatMap(emp-> emp.getCities().stream()).collect(Collectors.toList());
-        TreeSet<String> orderedCity = new TreeSet<>(cities);
+        TreeSet<String> orderedCity = empList.stream().flatMap(emp -> emp.getCities().stream()).collect(Collectors.toCollection(TreeSet::new));
         System.out.println(orderedCity);
     }
 }

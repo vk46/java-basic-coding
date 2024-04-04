@@ -4,19 +4,6 @@ import java.util.Scanner;
 
 public class PrintReverseNumber {
 
-    public static void printReverseNumber(int number) {
-        if (String.valueOf(number).length() < 2) {
-            System.err.println("Please enter valid input!");
-            return;
-        }
-        String input = String.valueOf(number);
-        String result = "";
-        for (int i = input.length() - 1; i >= 0; i--) {
-            result += input.charAt(i);
-        }
-        System.out.println(result);
-    }
-
     public static void printReverseNum(int number) {
         if (number < 10) {
             System.err.println("Please enter valid input!");
@@ -29,13 +16,12 @@ public class PrintReverseNumber {
             result = result*10+digit;
             number = number / 10;
         }
-        // System.out.println(result);
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 		int num = sc.nextInt();
-        printReverseNumber(num);
+        printReverseNum(num);
         sc.close();
     }
 

@@ -37,7 +37,7 @@ public class PrintMatchNumbers {
     }
 
     public static void main(String[] args) {
-        // PrintMatchNumbers.findMatchNumbers(new int[] { 1, 6, 3, 5, 2 }, 5);
+        PrintMatchNumbers.findMatchNumbers(new int[] { 1, 6, 3, 5, 2 }, 50);
         PrintMatchNumbers.findMatchNumbersHashMap(new int[] { 1, 6, 3, 5, 2 }, 5);
     }
 }

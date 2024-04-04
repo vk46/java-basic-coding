@@ -3,12 +3,12 @@ package com.vk.strings;
 public class PrintPalindrome {
 
 	public static void printPalindrome(String str) {
-		if(str.length()==0) {
+		if(str.isEmpty()) {
 			System.out.println("Input string is empty!");
 			return;
 		}
 		StringBuffer reversed = new StringBuffer(str).reverse();
-		if(str.equals(reversed.toString())) {
+		if(str.contentEquals(reversed)) {
 			System.out.println(str+", this string is Palindrome");
 		}else {
 			System.out.println(str+", this string is not Palindrome");
@@ -16,15 +16,15 @@ public class PrintPalindrome {
 	}
 
 	public static void palindromeWithoutPredefinedMethod(String str) {
-		if(str.length()==0) {
+		if(str.isEmpty()) {
 			System.out.println("Input string is empty!");
 			return;
 		}
-		String reversedStr = "";
+		StringBuilder reversedStr = new StringBuilder();
 		for(int i =str.length()-1;i>=0;i--) {
-			reversedStr += str.charAt(i);
+			reversedStr.append(str.charAt(i));
 		}
-		if(str.equals(reversedStr.toString())) {
+		if(str.contentEquals(reversedStr)) {
 			System.out.println(str+", this string is Palindrome");
 		}else {
 			System.out.println(str+", this string is not Palindrome");
@@ -32,11 +32,7 @@ public class PrintPalindrome {
 	}
 
 	public static void main(String[] args) {
-		//		printPalindrome("MADAM");
-		//		printPalindrome("HELLO");
-		//		printPalindrome("");
-		//		palindromeWithoutPredefinedMethod("");
-		//		palindromeWithoutPredefinedMethod("MADAM");
+		printPalindrome("MADAM");
 		palindromeWithoutPredefinedMethod("HELLO");
 	}
 

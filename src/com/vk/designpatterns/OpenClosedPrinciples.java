@@ -4,7 +4,7 @@ import com.vk.model.Shape;
 
 // Circle.java
 class Circle implements Shape {
-    private double radius;
+    private final double radius;
 
     public Circle(double radius) {
         this.radius = radius;
@@ -19,7 +19,7 @@ class Circle implements Shape {
 
 // Square.java
 class Square implements Shape {
-    private double side;
+    private final double side;
 
     public Square(double side) {
         this.side = side;
@@ -33,8 +33,8 @@ class Square implements Shape {
 
 // Triangle.java
 class Triangle implements Shape {
-    private double base;
-    private double height;
+    private final double base;
+    private final double height;
 
     public Triangle(double base, double height) {
         this.base = base;
