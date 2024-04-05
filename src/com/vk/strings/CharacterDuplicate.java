@@ -15,7 +15,7 @@ public class CharacterDuplicate {
                 map.put(ch, 1);
             }
         }
-        map.forEach((key, value) -> System.out.println(key+" : "+value));
+        map.forEach((key, value) -> System.out.println(key+": "+value));
     }
     public static void main(String[] args) {
         printRepetition("AAABBCCDDD");

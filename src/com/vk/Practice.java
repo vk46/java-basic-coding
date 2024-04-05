@@ -1,9 +1,7 @@
 package com.vk;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Practice {
     public static void findDuplicates(int[] array) {
