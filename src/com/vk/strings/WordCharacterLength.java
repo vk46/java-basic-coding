@@ -10,7 +10,7 @@ public class WordCharacterLength {
             System.out.println("Invalid input");
             return;
         }
-        Arrays.stream(input.split(" ")).forEach(word -> System.out.println("Word: "+word+", Character count: "+word.chars().count()));
+        Arrays.stream(input.split(" ")).forEach(word -> System.out.println(word+", Character count: "+word.chars().count()));
     }
     public static void main(String[] args) {
 //        printCharLength("");

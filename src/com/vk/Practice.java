@@ -1,6 +1,7 @@
 package com.vk;
 
 import java.util.HashSet;
+import java.util.Set;
 import java.util.stream.IntStream;
 
 public class Practice {
@@ -9,18 +10,19 @@ public class Practice {
             System.out.println("Invalid input");
         }
 
-        HashSet<Integer> set = new HashSet<>();
-        HashSet<Integer> duplicateSet = new HashSet<>();
+        Set<Integer> set = new HashSet<>();
+        Set<Integer> duplicateSet = new HashSet<>();
 
-        IntStream.of(array).parallel().forEach(num -> {
+        IntStream.of(array).forEach(num -> {
             if (!set.add(num)) {
                 duplicateSet.add(num);
             }
         });
-        System.out.println("Unique elements: ");
-        set.forEach(System.out::println);
-        System.out.println("Duplicates elements: ");
-        duplicateSet.forEach(System.out::println);
+        System.out.print("Unique elements: ");
+        set.forEach(System.out::print);
+        System.out.println();
+        System.out.print("Duplicates elements: ");
+        duplicateSet.forEach(System.out::print);
     }
 
     public static void main(String[] args) {
