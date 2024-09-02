@@ -19,10 +19,6 @@ public class MissingCharacters {
                 .mapToObj(c-> (char) c)
                 .collect(Collectors.toSet());
 
-        System.out.println(alphabetSet.toString());
-        System.out.println(inputSet.toString());
-
-        // Convert input string to lowercase
         // Remove each character found in the input string from the alphabet set
         for (Character c : inputSet) {
             alphabetSet.remove(c);
