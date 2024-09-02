@@ -1,41 +1,43 @@
 package com.vk.strings;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MissingCharacters {
 
-    public static String findMissingCharacters(String input) {
+    public static Set<Character> findMissingCharacters(String input) {
 
         // Initialize a constant String to store all characters in the alphabet
-        String constant = "The quick brown fox jumps over the lazy dog".replaceAll(" ", "");
+        String constant = "The quick brown fox jumps over the lazy dog";
 
-        Set<Character> alphabetSet = new HashSet<>();
-        alphabetSet.addAll(Arrays.asList(constant.toLowerCase().chars().mapToObj(c -> (char)c).toArray(Character[]::new)));
+        Set<Character> alphabetSet = constant.replaceAll(" ", "")
+                .toLowerCase().chars()
+                .mapToObj(c-> (char) c)
+                .collect(Collectors.toSet());
+        Set<Character> inputSet = input.replaceAll(" ", "")
+                .toLowerCase().chars()
+                .mapToObj(c-> (char) c)
+                .collect(Collectors.toSet());
 
-        System.out.println(alphabetSet.toString().toUpperCase());
+        System.out.println(alphabetSet.toString());
+        System.out.println(inputSet.toString());
 
         // Convert input string to lowercase
         // Remove each character found in the input string from the alphabet set
-        for (char c : input.toLowerCase().toCharArray()) {
+        for (Character c : inputSet) {
             alphabetSet.remove(c);
         }
 
-        // Convert the set of missing characters to a string
-        StringBuilder missingChars = new StringBuilder();
-        for (char c : alphabetSet) {
-            missingChars.append(c);
-        }
-
-        return missingChars.toString();
+        return alphabetSet;
     }
 
     public static void main(String[] args) {
         String sentence = "The lazy dog";
-        String missingChars = findMissingCharacters(sentence);
-        if (missingChars.isEmpty()) {
+        Set<Character> missingChars = findMissingCharacters(sentence);
+        if (missingChars.size()==0) {
             System.out.println("The sentence contains every single letter in the alphabet.");
         } else {
-            System.out.println("Missing characters: " + missingChars.toUpperCase());
+            System.out.println("Missing characters: " + missingChars.toString());
         }
     }
 }
